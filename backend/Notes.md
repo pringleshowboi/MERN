@@ -21,27 +21,27 @@
 
 ## How a Full-Stack App Works
 
-| Step                | Flow                                   |
-|---------------------|----------------------------------------|
-| Client Request      | Client → Server                        |
-| Server Response     | Server → Client (DOCS/Response)        |
+| Step            | Flow                        |
+|-----------------|----------------------------|
+| Client Request  | Client → Server             |
+| Server Response | Server → Client (Response)  |
 
 ## API (Application Programming Interface)
 
-| Flow                | Description                            |
-|---------------------|----------------------------------------|
-| End-User → API      | Sends request to server                |
-| Server → End-User   | Sends response back to client          |
+| Flow           | Description                   |
+|----------------|------------------------------|
+| End-User → API | Sends request to server       |
+| Server → User  | Sends response back to client |
 
 ## CRUD Operations via REST API
 
-| HTTP Method | Operation      | Description                |
-|-------------|---------------|----------------------------|
-| POST        | Create         | Create a resource          |
-| GET         | Read           | Retrieve a resource        |
-| PUT         | Update         | Update a resource          |
-| DELETE      | Delete         | Remove a resource          |
-| OPTIONS     | Options        | Shows available methods    |
+| HTTP Method | Operation | Description           |
+|-------------|-----------|-----------------------|
+| POST        | Create    | Create a resource     |
+| GET         | Read      | Retrieve a resource   |
+| PUT         | Update    | Update a resource     |
+| DELETE      | Delete    | Remove a resource     |
+| OPTIONS     | Options   | Shows allowed methods |
 
 ## HTTP Status Codes
 
@@ -49,19 +49,32 @@
 |------------|----------------|----------------------------------------------------------------------------------|
 | 1xx        | Informational   | -                                                                                |
 | 2xx        | Success         | -                                                                                |
-| 3xx        | Redirection     | E.g., 301 (Moved Permanently), HTTP→HTTPS                                        |
+| 3xx        | Redirection     | 301 (Moved Permanently), HTTP→HTTPS                                              |
 | 4xx        | Client Error    | 400 (Bad Request), 401 (Unauthorized), 403 (Forbidden), 404 (Not Found), 429 (Too Many Requests) |
 | 5xx        | Server Error    | 500 (Internal Server Error), 503 (Service Unavailable)                           |
+
 ![alt text](image.png)
 
 ## Key Concepts
 
-| Term         | Description                                                                 |
-|--------------|-----------------------------------------------------------------------------|
-| Endpoint     | Combination of URL + HTTP Method for interacting with a resource            |
-| API Routes   | Defined in server.js, e.g., `app.use("/api/notes", notesRoutes);`           |
-| Controllers  | Organize logic for API endpoints, making code easier to maintain and update |
+| Term        | Description                                                                 |
+|-------------|-----------------------------------------------------------------------------|
+| Endpoint    | Combination of URL + HTTP Method for interacting with a resource            |
+| API Routes  | Defined in server.js, e.g., `app.use("/api/notes", notesRoutes);`           |
+| Controllers | Organize logic for API endpoints, making code easier to maintain and update |
 
 ---
 
-*This document summarizes backend setup, API structure, and key concepts for a MERN stack project
+*This document summarizes backend setup, API structure, and key concepts for a MERN stack project.*
+
+## Middleware
+
+| Flow                                   |
+|-----------------------------------------|
+| Client → Request → Server → Middleware → Response |
+
+## Rate Limiting
+
+| Concept        | Description                                                                 |
+|----------------|-----------------------------------------------------------------------------|
+| Rate Limiting  | Controls how often someone can perform actions (e.g., refresh, API requests, login attempts). Example: 100 requests per user
